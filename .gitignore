@@ -1,0 +1,23 @@
+# ---- Converted from your own copy of FTL: never commit or share these ----
+generated/
+nitrofiles/
+*.nds
+.ftl-install/
+releases/
+release/
+checkpoints/
+
+# ---- Build output and local tools ----
+.tools/
+build/
+*.elf
+*.map
+*.exe
+__pycache__/
+
+# ---- Saves and logs ----
+*.sav
+*.sav.tmp
+*.sav.bak
+*.sav.bad
+*.log

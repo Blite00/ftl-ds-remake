@@ -1,0 +1,16 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  clean-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: No FTL assets in the repository
+        run: python tools/audit_clean.py
+      - name: Tools compile
+        run: python -m py_compile tools/*.py tests/*.py
+      - name: Setup script runs
+        run: python tools/setup_assets.py --help
